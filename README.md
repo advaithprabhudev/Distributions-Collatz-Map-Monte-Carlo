@@ -95,11 +95,8 @@ collatz-montecarlo/
 │   ├── sampler.py        uniform Monte Carlo sampler
 │   ├── analysis.py       distribution fitting and hypothesis testing
 │   ├── plots.py          figure generation
-├── tests/
-│   ├── test_collatz.py
-│   ├── test_sampler.py
-│   └── test_analysis.py
 ├── outputs/              saved figures (generated at runtime)
+├── plots/              mcmc approach plots (generated at runtime)
 ├── main.py               experiment entry point
 ├── requirements.txt
 └── README.md
