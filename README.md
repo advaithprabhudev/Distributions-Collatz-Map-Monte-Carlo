@@ -21,6 +21,22 @@ collatz-montecarlo/
 
 The dependency order is strict: `collatz.py` has no internal imports; `sampler.py` imports from `collatz.py`; `analysis.py` imports from `sampler.py`; `plots.py` imports from `analysis.py`; `main.py` imports all four.
 
+## Output 
+
+For a positive integer N, the collatz map is defined as:
+
+$$T(n) = \begin{cases} n/2 & n \text{ even} \\ (3n+1)/2 & n \text{ odd} \end{cases}$$
+
+The stopping time is the smallest such that $T^k(n) = 1$. This project samples $n \sim \text{Uniform}[1, N]$ and characterizes the empirical distributions of stopping times statistically using parity vectors.
+
+## Mathematics Behind It
+
+**Log-Normal Heuristic** Terras [1] showed that under a random parity, succesive applications of the collatz map in expectation of odd steps and even steps. Lagrias [2] formalized on this hypothesis:
+
+$$\log \sigma(n) \approx \mathcal{N}\!\left(\mu \log n,\ \sigma^2 \log n\right)$$
+
+This project tests whether the empirical distributions of stopping times is consistent with the Log-Normal model, using the KS-Test as the criterion. 
+
 
 ## References
 
